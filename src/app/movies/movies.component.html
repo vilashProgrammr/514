@@ -1,7 +1,7 @@
 <p class="pull-right visible-xs">
   <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
 </p>
-<div class="jumbotron">
+<div class="jumbotron"> invite = Ae3FwpD4jKTVyuUDePLdKhCp
   <p>Search for a movie using the form below</p>
   <form>
     <div class="form-group">
@@ -11,7 +11,13 @@
               [matAutocomplete]="auto" [(ngModel)]="searchStr" (keyup)="inputKeyUp($event)">
                 <!--YOUR SOLUTION STARTS--> 
    
-
+<!--dj+1@programmr.com-->
+   <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option.original_title" (onSelectionChange)="optionSelected(option.original_title)">
+                    <img style="vertical-align:middle; margin-right: 10px" aria-hidden src="https://image.tmdb.org/t/p/w300/{{option.poster_path}}" height="25" />
+                    <span>{{option.original_title}}</span> 
+                </mat-option>
+              </mat-autocomplete>
                 <!--YOUR SOLUTION CODE ENDS-->
             </mat-form-field>
       </div>
